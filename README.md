@@ -1,1 +1,1 @@
-# nitecode-vscode
+# NiteCode Syntax extension for VSCode
