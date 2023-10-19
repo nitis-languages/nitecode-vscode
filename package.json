@@ -1,0 +1,42 @@
+{
+    "name": "nitecode",
+    "displayName": "NiteCode Syntax",
+    "description": "NiteCode Syntax for VSCode",
+    "repository": "https://github.com/nitis-languages/nitecode-vscode",
+    "icon": "./resources/icon.png",
+    "publisher": "NiTiS-Dev",
+    "version": "0.0.5",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "author": {
+        "name": "NiTiS-Dev/Languages",
+        "url": "https://github.com/nitis-languages"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "nitecode",
+                "aliases": [
+                    "NiteCode",
+                    "Nite",
+                    "nitecode"
+                ],
+                "extensions": [
+                    ".nite"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "nitecode",
+                "scopeName": "source.nite",
+                "path": "./syntaxes/nite.tmLanguage.json"
+            }
+        ]
+    }
+}

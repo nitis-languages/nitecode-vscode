@@ -1,0 +1,71 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "NiteCode",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#builtin-types"
+        },
+        {
+            "include": "#numerics"
+        },
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.nite",
+				"match": "\\b(?:new|operator|type|enum|trait|ref|local|if|else|while|loop|do|goto|break|once|for|return|continue|module|static|virtual|abstract|alias|sealed|__limit|public|protected|private|__homie|__family|internal|unsafe|default|sizeof|typeof)\\b"
+			}]
+		},
+        "constants":{
+            "patterns": [{
+                "name": "constant.language.nite",
+                "match": "\\b(?:false|true|nil)\\b"
+            }]
+        },
+        "builtin-types": {
+            "patterns": [
+                {
+                    "name": "storage.type.nite",
+                    "match": "\\b(?:i8|i16|i32|i64|i128|u8|u16|u32|u64|u128|bool|f32|f64|f16|char8|char16|char32)\\b"
+                },
+                {
+                    "name": "storage.type.void.nite",
+                    "match": "\\b(?:void)\\b"
+                }
+            ]
+        },
+        "numerics": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.nite",
+                    "match": "\\b(0[xX][A-Fa-f0-9]+|0[bB][01]+|([0-9_]+))([uUiI](8|16|32|64|128))?\\b"
+                },
+                {
+                    "name": "constant.numeric.float.nite",
+                    "match": "\\b((([0-9]+)?(\\.))?[0-9]+(?:f16|f32|f64)?)\\b"
+                }
+            ]
+        },
+		"strings": {
+			"name": "string.quoted.double.nite",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.nite",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.nite"
+}
